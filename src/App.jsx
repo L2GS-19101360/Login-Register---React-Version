@@ -9,7 +9,7 @@ class App extends Component {
 
   constructor() {
     super();
-    
+    this.toLoginPage = this.toLoginPage.bind(this);
   }
 
   componentDidMount() {
@@ -19,7 +19,9 @@ class App extends Component {
 
   }
 
-  
+  toLoginPage() {
+    this.props.history.push('LoginPage');
+  }
 
   render() {
     return (
@@ -43,7 +45,10 @@ class App extends Component {
                 </li>
               </ul>
               <form className="d-flex">
-                
+                <button className="btn btn-primary" type="button" onClick={this.toLoginPage}>
+                  <BoxArrowRight /> Login Page
+                </button>
+                &nbsp;
               </form>
             </div>
           </div>
