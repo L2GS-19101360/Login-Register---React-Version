@@ -1,0 +1,46 @@
+.RegisterAccountBox{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    height: 80%;
+    width: 35%;
+    padding: 3%;
+}
+#toAppBtn{
+    margin-top: 20px;
+}
+.RegisterAccountBox form{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.RegisterAccountBox form label{
+    margin-bottom: 5px;
+}
+.RegisterAccountBox form button{
+    margin-top: 10px;
+}
+.seePassword{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+}
+#eye{
+    margin-left: 5px;
+    font-size: xx-large;
+    cursor: pointer;
+}
+#reactlogo {
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
