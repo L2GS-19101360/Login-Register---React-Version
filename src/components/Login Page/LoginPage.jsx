@@ -11,7 +11,10 @@ class LoginPage extends Component {
     this.toAppPage = this.toAppPage.bind(this);
     this.togglePasswordVisibility = this.togglePasswordVisibility.bind(this);
     this.state = {
-      showPassword: false
+      showPassword: false,
+
+      enterEmail: "",
+      enterPassword: ""
     }
   }
 
@@ -32,6 +35,11 @@ class LoginPage extends Component {
     }));
   }
 
+  handleLoginAccount = (event) => {
+    event.preventDefault();
+    console.log(this.state.enterEmail + this.state.enterPassword)
+  }
+
   render() {
     var passwordInputType = this.state.showPassword ? "text" : "password";
 
@@ -39,13 +47,24 @@ class LoginPage extends Component {
       <div className='LoginAccountBox'>
         <img src={reactlogo} alt="" id='reactlogo'/>
         <h3>Login Page</h3>
-        <form action="" method="post">
+        <form action="" method="post" onSubmit={this.handleLoginAccount}>
 
-          <input name='userEmail' className="form-control" type="email" placeholder="Enter Email Address" aria-label="default input example" />
+          <input name='userEmail' 
+                 className="form-control" 
+                 type="email" 
+                 placeholder="Enter Email Address" 
+                 aria-label="default input example"
+                 value={this.state.enterEmail}
+                 onChange={(e) => (this.setState({enterEmail: e.target.value}))} />
           <label htmlFor="userEmail">Email</label><br />
 
           <div className='seePassword'>
-            <input className="form-control" type={passwordInputType} placeholder="Enter Password" aria-label="default input example" />
+            <input className="form-control" 
+                   type={passwordInputType} 
+                   placeholder="Enter Password" 
+                   aria-label="default input example"
+                   value={this.state.enterPassword}
+                   onChange={(e) => (this.setState({enterPassword: e.target.value}))} />
             {this.state.showPassword ? (
               <EyeSlashFill id='eye' onClick={this.togglePasswordVisibility} />
             ) : (
