@@ -37,7 +37,7 @@ class RegisterPage extends Component {
     }));
   }
 
-  handleCreateAccount = () => {
+  handleCreateAccount = (event) => {
     event.preventDefault();
     console.log(this.state.newLname + this.state.newFname + this.state.newEmail + this.state.newPassword);
   }
